@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET", "ASPNET\ASPNET.csproj", "{CF022B63-5AF8-4A7B-A337-6DC5DD02897C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPNET.Tests", "ASPNET.Tests\ASPNET.Tests.csproj", "{4D46CDAF-E865-4DA6-BC38-E009FC40BFDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF022B63-5AF8-4A7B-A337-6DC5DD02897C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF022B63-5AF8-4A7B-A337-6DC5DD02897C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF022B63-5AF8-4A7B-A337-6DC5DD02897C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF022B63-5AF8-4A7B-A337-6DC5DD02897C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D46CDAF-E865-4DA6-BC38-E009FC40BFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D46CDAF-E865-4DA6-BC38-E009FC40BFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D46CDAF-E865-4DA6-BC38-E009FC40BFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D46CDAF-E865-4DA6-BC38-E009FC40BFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
