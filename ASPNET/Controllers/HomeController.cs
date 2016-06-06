@@ -10,6 +10,8 @@ namespace ASPNET.Controllers
     {
         public ActionResult Index()
         {
+            int hour = DateTime.Now.Hour;
+            ViewData["greeting"] = (hour < 12 ? "Good morning" : "Good afternoon");
             return View();
         }
 
