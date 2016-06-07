@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ASPNET.Models;
-using ASPNET.LanguageFeatures.Models;
 
 namespace ASPNET.Controllers
 {
@@ -68,7 +67,7 @@ namespace ASPNET.Controllers
 
         public ViewResult AutoProperty()
         {
-            var myProduct = new ASPNET.LanguageFeatures.Models.Product();
+            var myProduct = new Product();
             myProduct.Name = "Kayak";
             string productName = myProduct.Name;
             return View("Result", (object)String.Format("Product name: {0}", productName));
@@ -76,7 +75,7 @@ namespace ASPNET.Controllers
 
         public ViewResult CreateProduct()
         {
-            var myProduct = new ASPNET.LanguageFeatures.Models.Product {
+            var myProduct = new Product {
                 ProductID=100,Name="Kayak",
                 Description="A boat for one person",
                 Price=275M, Category="Watersports"
@@ -97,13 +96,13 @@ namespace ASPNET.Controllers
 
         public ViewResult UseExtension()
         {
-            var cart = new ASPNET.LanguageFeatures.Models.ShoppingCart {
-                Products = new List<ASPNET.LanguageFeatures.Models.Product>
+            var cart = new ShoppingCart {
+                Products = new List<Product>
                 {
-                    new ASPNET.LanguageFeatures.Models.Product {Name="Kayak",Price=275M },
-                    new ASPNET.LanguageFeatures.Models.Product {Name="Lifejacket",Price=48.95M },
-                    new ASPNET.LanguageFeatures.Models.Product {Name="Soccer ball",Price=19.50M },
-                    new ASPNET.LanguageFeatures.Models.Product {Name="Corner flag",Price=34.95M },
+                    new Product {Name="Kayak",Price=275M },
+                    new Product {Name="Lifejacket",Price=48.95M },
+                    new Product {Name="Soccer ball",Price=19.50M },
+                    new Product {Name="Corner flag",Price=34.95M },
                 }
             };
             decimal cartTotal = cart.TotalPrices();

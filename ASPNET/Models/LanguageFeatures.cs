@@ -6,17 +6,18 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace ASPNET.LanguageFeatures.Models
+namespace ASPNET.Models
 {
     public class Product
     {
         private string name;
         public int ProductID { get; set; }
-        public string Name
-        {
-            get { return ProductID + name; }
-            set { name = value; }
-        }
+        //public string Name
+        //{
+        //    get { return ProductID + name; }
+        //    set { name = value; }
+        //}
+        public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string Category { get; set; }
