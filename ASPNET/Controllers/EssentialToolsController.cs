@@ -19,7 +19,7 @@ namespace ASPNET.Controllers
             new Product {Name="Corner flag", Category="Soccer", Price=34.95M }
         };
 
-        public EssentialToolsController(IValueCalculator calcParam)
+        public EssentialToolsController(IValueCalculator calcParam, IValueCalculator calc2)
         {
             calc = calcParam;
         }

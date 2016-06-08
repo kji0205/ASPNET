@@ -8,9 +8,12 @@ namespace ASPNET.Models
     public class LinqValueCalculator : IValueCalculator
     {
         private IDiscountHelper discounter;
+        public static int counter = 0;
+
         public LinqValueCalculator(IDiscountHelper discountParam)
         {
             discounter = discountParam;
+            System.Diagnostics.Debug.WriteLine(string.Format("Instance {0} created", ++counter));
         }
         public decimal ValueProducts(IEnumerable<Product> products)
         {
@@ -62,6 +65,29 @@ namespace ASPNET.Models
         {
             decimal discount = totalParam > 100 ? 70 : 25;
             return (totalParam - (discount / 100m * totalParam));
+        }
+    }
+
+    public class MinimumDiscountHelper:IDiscountHelper
+    {
+        public decimal ApplyDiscount(decimal totalParam)
+        {
+            if (totalParam<0)
+            {
+                throw new NotImplementedException();
+            }
+            else if (totalParam > 100)
+            {
+                return totalParam * 0.9M;
+            }
+            else if (totalParam >= 10 && totalParam <= 100)
+            {
+                return totalParam -5;
+            }
+            else
+            {
+                return totalParam;
+            }
         }
     }
 

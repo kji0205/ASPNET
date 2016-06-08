@@ -5,6 +5,7 @@ using System.Web;
 using Ninject;
 using ASPNET.Models;
 using System.Web.Mvc;
+using Ninject.Web.Common;
 
 namespace ASPNET.Infrastructure
 {
@@ -26,9 +27,10 @@ namespace ASPNET.Infrastructure
         }
         private void AddBindings()
         {
+            kernel.Bind<IValueCalculator>().To<LinqValueCalculator>().InRequestScope();
             kernel.Bind<IValueCalculator>().To<LinqValueCalculator>();
             kernel.Bind<IDiscountHelper>().To<DefaultDiscountHelper>().WithConstructorArgument("discountParam", 50M);
-            //kernel.Bind<IDiscountHelper>().To<FlexibleDiscountHelper>().WhenInjectedInto<LinqValueCalculator>();
+            kernel.Bind<IDiscountHelper>().To<FlexibleDiscountHelper>().WhenInjectedInto<LinqValueCalculator>();
         }
     }
 }
