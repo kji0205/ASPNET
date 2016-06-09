@@ -4,6 +4,8 @@
         <meta name="viewport" content="width=device-width">
         <title>@Page.Title</title>
         @RenderSection("head", required: false)
+        <script src="@Url.Content("~/Scripts/doT.js")"></script>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
     </head>
     <body>
         <h1>Product Information</h1>
@@ -12,4 +14,5 @@
         </div>
         <h2>Visit <a href="http://apress.com">Apress</a></h2>
     </body>
+    @RenderSection("Scripts", required: false)
 </html>
