@@ -58,14 +58,14 @@ namespace ASPNET.Tests
             Assert.AreEqual(0, discount0);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void Discount_Negative_Total()
-        {
-            // Arrange
-            IDiscountHelper target = getTestObject();
-            // Act
-            target.ApplyDiscount(-1);
-        }
+        //[TestMethod]
+        //[ExpectedException(typeof(ArgumentOutOfRangeException))]
+        //public void Discount_Negative_Total()
+        //{
+        //    // Arrange
+        //    IDiscountHelper target = getTestObject();
+        //    // Act
+        //    //target.ApplyDiscount(-1);
+        //}
     }
 }
