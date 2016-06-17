@@ -1,8 +1,14 @@
-﻿@model DateTime
+﻿
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-The day is: @Model.DayOfWeek
+The day is: @(((DateTime)TempData["Date"]).DayOfWeek)
+<p>
+
+</p>
+
+The message is: @ViewBag.Message
+The message is: @TempData["Message"]
