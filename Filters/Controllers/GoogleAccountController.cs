@@ -3,23 +3,20 @@ using System.Web.Security;
 
 namespace Filters.Controllers
 {
-    //[Authorize(Roles="trader")]
-    public class AccountController : Controller
+    public class GoogleAccountController : Controller
     {
-        //[Authorize]
         public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(string username,string password, string returnUrl)
+        public ActionResult Login(string username, string password, string returnUrl)
         {
-            bool result = FormsAuthentication.Authenticate(username, password);
-            if (result)
+            if (username.EndsWith("@google.com") && password == "secret")
             {
                 FormsAuthentication.SetAuthCookie(username, false);
-                return Redirect(returnUrl ?? Url.Action("Index", "Admin"));
+                return Redirect(returnUrl ?? Url.Action("Index", "Home"));
             }
             else
             {
